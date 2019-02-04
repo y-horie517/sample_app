@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   post '/posts' => 'posts#create'
 
   get '/posts' => 'posts#index'
+
+#/posts/1や/posts/2など
+  get '/posts/:id' => 'posts#show', as:'post'
+
 end

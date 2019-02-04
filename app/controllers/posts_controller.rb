@@ -10,9 +10,19 @@ class PostsController < ApplicationController
   	post = Post.new(post_params)
   	#DBに保存する
   	post.save
-  	#トップ画面へリダイレクト
-  	redirect_to '/top'
+  	#詳細画面へリダイレクト
+  	redirect_to post_path(post.id)
   end
+
+  def index
+  	@posts = Post.all
+  end
+
+  def show
+  	@post = Post.find(params[:id])
+  end
+
+
 
 # 境界線 「ここから下はcontrollerの中でしか呼び出せません」
   private

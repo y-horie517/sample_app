@@ -1,0 +1,8 @@
+<h1>投稿一覧</h1>
+<!-- ループ処理・記事の数だけ繰り返し -->
+<% @posts.each do |post| %>
+	<p>タイトル</p>
+	<span>
+		<%=link_to post.title, post_path(post.id) %>
+	</span>
+<% end %>
