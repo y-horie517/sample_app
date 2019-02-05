@@ -32,6 +32,15 @@ class PostsController < ApplicationController
   	redirect_to post_path(post.id)
   end
 
+  def destroy
+  	# データ（レコード）を１件取得
+  	post = Post.find(params[:id])
+  	# レコードをDBから削除
+  	post.destroy
+  	# post一覧画面へリダイレクト
+  	redirect_to posts_path
+  end
+
 # 境界線 「ここから下はcontrollerの中でしか呼び出せません」
   private
 
